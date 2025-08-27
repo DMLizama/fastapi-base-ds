@@ -8,6 +8,7 @@ from src.models import ModeloBase
 # importamos los routers desde nuestros modulos
 from src.personas.router import router as personas_router
 from src.mascotas.router import router as mascotas_router
+from src.comerciantes.router import router as comerciantes_router
 from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
@@ -28,7 +29,8 @@ origins = [
     "http://localhost:5173", # para recibir requests desde app React (puerto: 5173)
 ]
 
-app.add_middleware(
+
+app.add_middleware( #analiza la Request, se define una estructura para la Request
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
@@ -40,3 +42,4 @@ app.add_middleware(
 # asociamos los routers a nuestra app
 app.include_router(personas_router)
 app.include_router(mascotas_router)
+app.include_router(comerciantes_router)

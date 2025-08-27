@@ -1,11 +1,10 @@
 from pydantic import BaseModel, field_validator
 from src.mascotas.models import TipoMascota
-from src.mascotas import exceptions
+from src.mascotas import exceptions #todo exceptions importado pero sería ideal hacerlo como en Comerciantes
 
 # Los siguientes schemas contienen atributos sin muchas restricciones de tipo.
 # Podemos crear atributos con ciertas reglas mediante el uso de un "Field" adecuado.
 # https://docs.pydantic.dev/latest/concepts/fields/
-
 
 class MascotaBase(BaseModel):
     nombre: str

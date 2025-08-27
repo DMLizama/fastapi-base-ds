@@ -1,0 +1,5 @@
+.\.venv\fastapi-ds\Scripts\Activate.ps1 #activar el entorno virtual
+
+cd C:\Users\Dario Lizama\Documents\GitHub\fastapi-base-ds #pararse en el raiz
+
+uvicorn src.main:app --reload #correr el sv
